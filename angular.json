@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "TabletManagerAngular"
+    }
+  },
+  "defaultProject": "TabletManagerAngular",
+  "cli": {
+    "analytics": "160a83b5-5218-49bc-ba49-0b4006295c76"
+  }
 }
