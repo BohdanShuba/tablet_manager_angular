@@ -3,21 +3,25 @@
   <img src="../assets/image/title.png" height="70" class="rounded mx-auto d-block mt-5"/>
 
   <div class="d-flex justify-content-center">
-    <form>
+    <form [formGroup]="loginForm">
       <div class="form mt-4" style="width: 300px">
 
         <div class="form-group">
           <label for="inputLogin">Логин</label>
-          <input type="text" class="form-control" name="login" id="inputLogin"/>
+          <input type="text" class="form-control"
+                 name="login" id="inputLogin"
+                 formControlName="login"/>
         </div>
 
         <div class="form-group">
           <label for="inputPassword">Пароль</label>
-          <input type="password" class="form-control" name="password" id="inputPassword"/>
+          <input type="password" class="form-control"
+                 name="password" id="inputPassword"
+                 formControlName="password"/>
         </div>
 
         <a class="btn btn-outline-primary float-left">Регистрация</a>
-        <button class="btn btn-primary float-right">Вход</button>
+        <button class="btn btn-primary float-right" (click)="signIn(loginForm.value)">Вход</button>
 
       </div>
     </form>
