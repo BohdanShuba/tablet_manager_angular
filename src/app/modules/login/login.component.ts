@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {LoginService} from '../../services/login/login.service';
+import {TokenStorageService} from '../../services/storage/token-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -14,17 +15,17 @@ export class LoginComponent implements OnInit {
     password: new FormControl()
   });
 
-  constructor(
-    private loginService: LoginService
-  ) {
+  constructor(private loginService: LoginService,
+              private tokenStorage: TokenStorageService) {
   }
 
   ngOnInit(): void {
   }
 
   signIn(loginForm: any) {
-    console.log(loginForm);
-    this.loginService.signIn(loginForm).subscribe((result: string) =>
-      console.log(result));
+    this.loginService.signIn(loginForm).subscribe((result: any) => {
+      this.tokenStorage.saveToken(result.token);
+      this.tokenStorage.saveUser(result);
+    });
   }
 }

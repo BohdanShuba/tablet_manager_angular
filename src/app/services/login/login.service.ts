@@ -20,8 +20,6 @@ export class LoginService {
 
   signIn(signInForm: any) {
     console.log(signInForm);
-    return this.http.post(this.apiUrl + 'api/signIn', {
-      signInForm
-    });
+    return this.http.post(this.apiUrl + 'api/sign/in', signInForm);
   }
 }
