@@ -3,7 +3,7 @@
   <img src="../assets/image/title.png" height="70" class="rounded mx-auto d-block mt-5"/>
 
   <div class="d-flex justify-content-center">
-    <form [formGroup]="loginForm">
+    <form [formGroup]="signInForm">
       <div class="form mt-4" style="width: 300px">
 
         <div class="form-group">
@@ -20,7 +20,7 @@
                  formControlName="password"/>
         </div>
         <a class="btn btn-outline-primary float-left">Регистрация</a>
-        <button class="btn btn-primary float-right" (click)="signIn(loginForm.value)">Вход</button>
+        <button class="btn btn-primary float-right" (click)="signIn(signInForm.value)">Вход</button>
 
       </div>
     </form>

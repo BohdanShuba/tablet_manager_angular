@@ -4,10 +4,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   loadChildren: './landing-page/landing-page.module#LandingPageModule'
-  // },
+  {
+    path: '',
+    loadChildren: () => import('./modules/authorization/authorization.module').then(m => m.AuthorizationModule)
+  },
   {
     path: 'login',
     loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule)
